@@ -215,6 +215,16 @@ In this example the workflow is aquiring an O365 Mailbox and will search and tag
 
 By using `-NoResultsFail` SearchAndTag.exe will exit with error code 1 if no results are found. This will allow for the workflow to use the "Pass / Fail" logic. 
 
+```mermaid
+graph TB
+A(( AXIOM Cloud )) --> B[AXIOM Process]
+B --> C[AXIOM Post Processing OCR]
+C --> D[SearchAndTag Emails Outside ACME]
+D --> E{Pass / Fail}
+E --> |Pass|F[Do Something - results found]
+E --> |Fail|G[Do Something - results not found]
+```
+
 ``` PowerShell
 # PowerShell Application Wrapper for Magnet AUTOMATE example.
 # SearchAndTag - Emails recipients outside ACME.com or ACMECorp.com
@@ -247,16 +257,6 @@ if($exit_code -eq $success_exit_code){
     Write-Host "[$application_name] Process finished with exit code $exit_code."
     Exit(1)
 }
-```
-
-```mermaid
-graph TB
-A(( AXIOM Cloud )) --> B[AXIOM Process]
-B --> C[AXIOM Post Processing OCR]
-C --> D[SearchAndTag Emails Outside ACME]
-D --> E{Pass / Fail}
-E --> |Pass|F[Do Something - results found]
-E --> |Fail|G[Do Something - results not found]
 ```
 
 ## Example 3 - Date Ranges and Privilege Data

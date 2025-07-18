@@ -49,6 +49,7 @@ Different file systems and file types can produce various fields, always sample 
 | `Activity Type` | Windows timeline activity types. |
 | `Authors` | Microsoft Office documents authors. |
 | `URL` | Any Web artifact URL. |
+| `Matched rule` | Yara rule match. |
 | `Artifact group` | Artifact group as shown in artifact view left pane. |
 | `Artifact type` | Artifact type as shown in Artifact Information. |
 
@@ -172,7 +173,7 @@ In this example, a custom input field in cases named "Keywords" has resulted in 
 
 ```mermaid
 graph TB
-A(( Image )) --> B[AXIOM Process OCR]
+A(( Image )) --> B[AXIOM Process]
 B --> C[AXIOM Post Processing]
 C --> D[SearchAndTag Keywords]
 ```

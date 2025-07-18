@@ -1,4 +1,7 @@
+
+
 # Search and Tag
+<img width="2290" height="1314" alt="SearchAndTag v2 0 0 Screenshot" src="https://github.com/user-attachments/assets/5059e297-b434-4b6b-84e4-18121d3494e6" />
 Use SearchAndTag.exe to sample your AXIOM Cases for text, date ranges and optionally tag them. Sreamline your tagging by incorporating SearchAndTag with Magnet AUTOMATE. 
 
 ## System Requirements

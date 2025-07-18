@@ -6,27 +6,27 @@ Any version of 64-Bit Microsoft Windows with support for .NETFramework Version v
 
 ## Required Parameters
 String values must be in quotations if spaces are used.
-| Parameter | Value |  Description  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Value |  Description  |
 |--|--|--|
-| `CasePath` | string | Path to locate .mfdb file. Account executing process must be able to read Case.mfdb. Write access required to create tags.
-| `Name` | string | Name of tag(s) to create. Use `@value` for string(s) in `Value`, Example: `"Keyword - @value"`. Not required if `-SearchOnly` is used.|
-| `Field` | string | AXIOM Case field. See field examples below. |
-| `MatchType` | string | `BeginsWith`, `EndsWith`, `Contains`, `NotContains`, `Equals`, `NotEquals`, or `RegEx`. |
-| `Value` | string | Search string, regular expression or file path. Separate each value by comma in CLI. You can refrence a keyword list file. |
+| `-CasePath` | string | Path to locate .mfdb file. Account executing process must be able to read Case.mfdb. Write access required to create tags.
+| `-Name` | string | Name of tag(s) to create. Use `@value` for string(s) in `Value`, Example: `"Keyword - @value"`. Not required if `-SearchOnly` is used.|
+| `-Field` | string | AXIOM Case field. See field examples below. |
+| `-MatchType` | string | `BeginsWith`, `EndsWith`, `Contains`, `NotContains`, `Equals`, `NotEquals`, or `RegEx`. |
+| `-Value` | string | Search string, regular expression or file path. Separate each value by comma in CLI. You can refrence a keyword list file. |
 
 
 ## Optional Parameters
 
-| Parameter | Value | Description |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parameter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Value | Description |
 |--|--|--|
-| `SearchOnly` | switch | Search function only. Will not crate tag(s). Read Only Mode. |
-| `Color` | string | `Green`, `Red`, `Yellow`, `Orange`, `Violete`, `Blue`, `LightBlue`, `Pink` or `Random`. Green is default if not provided. |
-| `EmptyTag` | switch | Creates tag even if no artifacts are found. |
-| `IncludeNoDates` | switch | For use with `-Field "DATE-RANGE"` only. Includes artifacts with no Created, Last Acccessed or Last Modified dates. |
-| `NoResultsFail` | switch | Exit with failure (exit code 1) if no results are found. |
-| `LogFile` | string | Full file path to save a logfile with results. |
-| `Version` | switch | Output version. |
-| `Help` | switch | Output help and examples. |
+| `-SearchOnly` | switch | Search function only. Will not crate tag(s). Read Only Mode. |
+| `-Color` | string | `Green`, `Red`, `Yellow`, `Orange`, `Violete`, `Blue`, `LightBlue`, `Pink` or `Random`. Green is default if not provided. |
+| `-EmptyTag` | switch | Creates tag even if no artifacts are found. |
+| `-IncludeNoDates` | switch | For use with `-Field "DATE-RANGE"` only. Includes artifacts with no Created, Last Acccessed or Last Modified dates. |
+| `-NoResultsFail` | switch | Exit with failure (exit code 1) if no results are found. |
+| `-LogFile` | string | Full file path to save a logfile with results. |
+| `-Version` | switch | Output version. |
+| `-Help` | switch | Output help and examples. |
 
 
 ## Field Examples
@@ -37,8 +37,8 @@ Different file systems and file types can produce various fields, always sample 
 ℹ️ Integer and float (such as size, skin tone percentage and geolocation) attributes are currently not supported.
 
 ### Common Field Examples
-| Field | Description |
-|--|--|
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description |
+|----|--|
 | `Filename` | The file name parsed from the file system. |
 | `File name` | Some artifacts such as pictures and video use "File name" attribute instead of "Filename." See the AXIOM Artifact Refrence inside the AXIOM Examine help menu. |
 | `Preview` | The transcribed text as displayed in the PREVIEW pane. |
@@ -69,7 +69,7 @@ Email attributes vary from all mail providers. The following examples are used w
 
 
 ### Dates Fields
-| Field | String Value | Desciption |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Desciption |
 |--|--|--|
 | `DATE-RANGE` | `<ISO-8601>` to `<ISO-8601>` | Searches artifacts with parsed dates displayed as Created, Last Acccessed and Last Modified. This will not search dates in Exif Data.  |
 | `DATES` | `null` | Searches for any artifact without parsed dates. |
@@ -174,7 +174,7 @@ In this example, a custom input field in cases named "Keywords" has resulted in 
 ```mermaid
 graph TB
 A(( Image )) --> B[AXIOM Process]
-B --> C[AXIOM Post Processing]
+B --> C[AXIOM Post Processing OCR]
 C --> D[SearchAndTag Keywords]
 ```
 
